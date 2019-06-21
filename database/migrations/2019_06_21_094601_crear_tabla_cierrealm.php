@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaEntrada extends Migration
+class CrearTablaCierrealm extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CrearTablaEntrada extends Migration
      */
     public function up()
     {
-        Schema::create('entrada', function (Blueprint $table) {
+        Schema::create('cierrealm', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('fechaHora');
             $table->unsignedBigInteger('idcomprobante');
             $table->foreign('idcomprobante')->references('id')->on('comprobante')->onDelete('restrict')->onUpdate('restrict');
-            $table->unsignedBigInteger('idproveedor')->nullable();
-            $table->foreign('idproveedor')->references('id')->on('proveedor')->onDelete('restrict')->onUpdate('restrict');
+            $table->boolean('conforme');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CrearTablaEntrada extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entrada');
+        Schema::dropIfExists('cierrealm');
     }
 }

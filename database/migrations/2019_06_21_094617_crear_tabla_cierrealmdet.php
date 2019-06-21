@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaEntradadet extends Migration
+class CrearTablaCierrealmdet extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CrearTablaEntradadet extends Migration
      */
     public function up()
     {
-        Schema::create('entradadet', function (Blueprint $table) {
+        Schema::create('cierrealmdet', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('identrada');
-            $table->foreign('identrada')->references('id')->on('entrada')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedBigInteger('idcierrealm');
+            $table->foreign('idcierrealm')->references('id')->on('cierrealm')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedBigInteger('idmercaderia');
             $table->foreign('idmercaderia')->references('id')->on('mercaderia')->onDelete('restrict')->onUpdate('restrict');
-            $table->integer('cantidad');
-            $table->date('fechaVen')->nullable();
-            $table->string('nroLote')->nullable();
-            $table->string('ubicacion')->nullable();
+            $table->integer('stockactual'); //almacenamos el stock registrado en esa fecha
+            $table->integer('cantidad'); //almacenamos la cantidad registrada en esa fecha
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ class CrearTablaEntradadet extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entradadet');
+        Schema::dropIfExists('cierrealmdet');
     }
 }
