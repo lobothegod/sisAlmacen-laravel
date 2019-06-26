@@ -3,6 +3,8 @@
 @section('contenido')
 <div class="row">
     <div class="col-lg-12">
+        @include('includes.form-error')
+        @include('includes.mensaje')
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Crear Menus</h3>
