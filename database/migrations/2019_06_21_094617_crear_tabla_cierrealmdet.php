@@ -22,6 +22,8 @@ class CrearTablaCierrealmdet extends Migration
             $table->integer('stockactual'); //almacenamos el stock registrado en esa fecha
             $table->integer('cantidad'); //almacenamos la cantidad registrada en esa fecha
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

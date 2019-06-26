@@ -20,6 +20,8 @@ class CrearTablaCierrealm extends Migration
             $table->foreign('idcomprobante')->references('id')->on('comprobante')->onDelete('restrict')->onUpdate('restrict');
             $table->boolean('conforme');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

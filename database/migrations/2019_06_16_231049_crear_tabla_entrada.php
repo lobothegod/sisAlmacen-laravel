@@ -21,6 +21,8 @@ class CrearTablaEntrada extends Migration
             $table->unsignedBigInteger('idproveedor')->nullable();
             $table->foreign('idproveedor')->references('id')->on('proveedor')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

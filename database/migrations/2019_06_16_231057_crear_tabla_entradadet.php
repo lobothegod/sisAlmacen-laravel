@@ -24,6 +24,8 @@ class CrearTablaEntradadet extends Migration
             $table->string('nroLote')->nullable();
             $table->string('ubicacion')->nullable();
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

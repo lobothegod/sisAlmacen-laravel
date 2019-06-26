@@ -17,6 +17,8 @@ class CrearTablaComprobante extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

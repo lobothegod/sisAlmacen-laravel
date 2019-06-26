@@ -18,6 +18,8 @@ class CrearTablaTienda extends Migration
             $table->string('nombre')->unique();
             $table->string('direccion')->nullable();
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

@@ -21,6 +21,8 @@ class CrearTablaProveedor extends Migration
             $table->string('telefono')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

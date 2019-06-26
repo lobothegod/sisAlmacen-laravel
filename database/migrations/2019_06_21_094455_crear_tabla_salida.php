@@ -23,6 +23,8 @@ class CrearTablaSalida extends Migration
             $table->unsignedBigInteger('idcliente')->nullable(); //solo para la salida de tienda
             $table->foreign('idcliente')->references('id')->on('cliente')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

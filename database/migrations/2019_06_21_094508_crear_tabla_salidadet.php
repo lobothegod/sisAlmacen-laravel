@@ -21,6 +21,8 @@ class CrearTablaSalidadet extends Migration
             $table->foreign('idmercaderia')->references('id')->on('mercaderia')->onDelete('restrict')->onUpdate('restrict');
             $table->integer('cantidad');
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
