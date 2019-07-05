@@ -23,7 +23,15 @@
                                 <td>{{$permiso->id}}</td>
                                 <td>{{$permiso->nombre}}</td>
                                 <td>{{$permiso->slug}}</td>
-                                <td></td>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                {{-- <td width="50"><button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-eye-open"></button></td>
+                                <td width="50"><button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-pencil"></button></td>
+                                <td width="50"><button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-trash" style="color:red"></button></td> --}}
+                                    
+                                <td width="150"><button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-eye-open"></button>
+                                    |<button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-pencil"></button>
+                                    |<button type="submit" class="btn btn-link"><span class="glyphicon glyphicon-trash" style="color:red"></button>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
